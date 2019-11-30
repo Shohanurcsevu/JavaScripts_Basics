@@ -321,23 +321,29 @@ function tipsCalculator(bill) {
     switch (true) {
 
         case bill < 50:
-                percentage = .2;
+            percentage = .2;
             break;
         case bill >= 50 && bill < 200:
-                percentage = .15;
+            percentage = .15;
             break;
 
         default:
-                percentage = .1;
+            percentage = .1;
     }
 
-    return percentage * bill ;
+    return percentage * bill;
 
 
 }
 
+var bill = [124, 48, 268];
+var tips = [tipsCalculator(bill[0]), tipsCalculator(bill[1]), tipsCalculator(bill[2])];
+var finalResult = [bill[0] + tips[0],
+bill[1] + tips[1],
+bill[2] + tips[2]
+];
+console.log(finalResult);
 
-var tips = tipsCalculator(10);
-console.log(tips);
+
 
 
