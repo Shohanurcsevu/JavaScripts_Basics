@@ -394,48 +394,59 @@
 // console.log(john);
 
 
-var jhon = {
-    firstName: 'John',
-    lastName: 'Smith',
-    mass: 64,
-    height: 1.56,
-    calBMI: function BMI() {
-        return this.mass / (this.height * this.height);
-    }
+// var jhon = {
+//     firstName: 'John',
+//     lastName: 'Smith',
+//     mass: 64,
+//     height: 1.56,
+//     calBMI: function BMI() {
+//         return this.mass / (this.height * this.height);
+//     }
+// }
+
+// var mark = {
+
+//     firstName: 'Mark',
+//     lastName: 'Lane',
+//     mass: 68,
+//     height: 1.56,
+//     calBMI: function BMI() {
+//         return this.mass / (this.height * this.height);
+//     }
+// }
+
+
+// var johnBMI = jhon.calBMI();
+// var markBMI = mark.calBMI();
+
+// // console.log(jhon.firstName +" " +jhon.lastName + " "+ johnBMI );
+// // console.log(mark.firstName +" "+mark.lastName +" "+markBMI);
+
+// var finalResult = function (jhonBMI, markBMI) {
+
+//     switch (true) {
+//         case jhonBMI > markBMI:
+//             return console.log(jhon.firstName + ' ' + jhon.lastName + ' ' + jhonBMI);
+//             break;
+//         case markBMI > jhonBMI:
+//             return console.log(mark.firstName + ' ' + mark.lastName + ' ' + markBMI);
+//             break;
+//         default:
+//             console.log('Both has same BMI');
+//     }
+// }
+
+// finalResult(johnBMI, markBMI);
+
+
+// for(var i = 0 ;i<10; i++)
+// {
+//     console.log(i);
+// }
+
+var jhon=['jhon','Smith', 1994, 'designer',false];
+
+for(var i =0;i <jhon.length ;i++ )
+{
+    console.log(jhon[i]);
 }
-
-var mark = {
-
-    firstName: 'Mark',
-    lastName: 'Lane',
-    mass: 68,
-    height: 1.56,
-    calBMI: function BMI() {
-        return this.mass / (this.height * this.height);
-    }
-}
-
-
-var johnBMI = jhon.calBMI();
-var markBMI = mark.calBMI();
-
-// console.log(jhon.firstName +" " +jhon.lastName + " "+ johnBMI );
-// console.log(mark.firstName +" "+mark.lastName +" "+markBMI);
-
-var finalResult = function (jhonBMI, markBMI) {
-
-    switch (true) {
-        case jhonBMI > markBMI:
-            return console.log(jhon.firstName + ' ' + jhon.lastName + ' ' + jhonBMI);
-            break;
-        case markBMI > jhonBMI:
-            return console.log(mark.firstName + ' ' + mark.lastName + ' ' + markBMI);
-            break;
-        default:
-            console.log('Both has same BMI');
-    }
-}
-
-finalResult(johnBMI, markBMI);
-
-
