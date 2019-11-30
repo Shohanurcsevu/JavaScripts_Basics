@@ -290,15 +290,54 @@
 
 // console.log(whatYouDo('designer' , 'John' ));
 
-var names = ['John', 'Mark' , 'Jane'];
+var names = ['John', 'Mark', 'Jane'];
 console.log(names[0]);
 console.log(names.length);
-names[1] = 'Ben';
+names[5] = 'Ben';
 console.log(names);
 names[names.length] = 'Marry';
 console.log(names);
 
+//Diffrent data type
+
+var john = ['John', 'Smith', 1994, 'designer', false];
+john.push('blue');
+john.unshift('Mr.');
+john.pop();
+john.shift();
+
+console.log(john);
+var s = john.indexOf(46);
+console.log(s);
+
+var isdesigner = john.indexOf('designer') === -1 ? "John is'nt a Designer" : "John is a Designer";
+
+console.log(isdesigner);
 
 
+function tipsCalculator(bill) {
+    var percentage;
+
+    switch (true) {
+
+        case bill < 50:
+                percentage = .2;
+            break;
+        case bill >= 50 && bill < 200:
+                percentage = .15;
+            break;
+
+        default:
+                percentage = .1;
+    }
+
+    return percentage * bill ;
+
+
+}
+
+
+var tips = tipsCalculator(10);
+console.log(tips);
 
 
