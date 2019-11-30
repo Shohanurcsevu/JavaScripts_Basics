@@ -290,60 +290,152 @@
 
 // console.log(whatYouDo('designer' , 'John' ));
 
-var names = ['John', 'Mark', 'Jane'];
-console.log(names[0]);
-console.log(names.length);
-names[5] = 'Ben';
-console.log(names);
-names[names.length] = 'Marry';
-console.log(names);
+// var names = ['John', 'Mark', 'Jane'];
+// console.log(names[0]);
+// console.log(names.length);
+// names[5] = 'Ben';
+// console.log(names);
+// names[names.length] = 'Marry';
+// console.log(names);
 
-//Diffrent data type
+// //Diffrent data type
 
-var john = ['John', 'Smith', 1994, 'designer', false];
-john.push('blue');
-john.unshift('Mr.');
-john.pop();
-john.shift();
+// var john = ['John', 'Smith', 1994, 'designer', false];
+// john.push('blue');
+// john.unshift('Mr.');
+// john.pop();
+// john.shift();
 
-console.log(john);
-var s = john.indexOf(46);
-console.log(s);
+// console.log(john);
+// var s = john.indexOf(46);
+// console.log(s);
 
-var isdesigner = john.indexOf('designer') === -1 ? "John is'nt a Designer" : "John is a Designer";
+// var isdesigner = john.indexOf('designer') === -1 ? "John is'nt a Designer" : "John is a Designer";
 
-console.log(isdesigner);
+// console.log(isdesigner);
 
 
-function tipsCalculator(bill) {
-    var percentage;
+// function tipsCalculator(bill) {
+//     var percentage;
 
-    switch (true) {
+//     switch (true) {
 
-        case bill < 50:
-            percentage = .2;
-            break;
-        case bill >= 50 && bill < 200:
-            percentage = .15;
-            break;
+//         case bill < 50:
+//             percentage = .2;
+//             break;
+//         case bill >= 50 && bill < 200:
+//             percentage = .15;
+//             break;
 
-        default:
-            percentage = .1;
+//         default:
+//             percentage = .1;
+//     }
+
+//     return percentage * bill;
+
+
+// }
+
+// var bill = [124, 48, 268];
+// var tips = [tipsCalculator(bill[0]), tipsCalculator(bill[1]), tipsCalculator(bill[2])];
+// var finalResult = [bill[0] + tips[0],
+// bill[1] + tips[1],
+// bill[2] + tips[2]
+// ];
+// console.log(finalResult);
+
+
+// var john = {
+
+//     firstName : 'John',
+//     lastName : 'Smith',
+//     birthYear : 1994,
+//     family : ['Jane','Mark', 'Emely'],
+//     job : 'teacher',
+//     isMarried : false
+
+
+// }
+//  var x= 'birthYear';
+
+
+// console.log(john[x]);
+
+// john.job='designer';
+// john['isMarried'] = true;
+
+// console.log(john);
+
+// var Jane= new Object();
+
+// Jane.firstName ='Jane';
+// Jane['lastName']= 'Smith';
+// Jane.birthYear= 1995;
+// console.log(Jane);
+
+// var john = {
+
+//     firstName: 'John',
+//     lastName: 'Smith',
+//     birthYear: 2002,
+//     family: ['Jane', 'Mark', 'Emely'],
+//     job: 'teacher',
+//     isMarried: false,
+//     calAge: function()
+//     {
+//         this.age= 2018-this.birthYear;
+//     },
+
+
+// };
+
+// john.calAge();
+
+// console.log(john);
+
+
+var jhon = {
+    firstName: 'John',
+    lastName: 'Smith',
+    mass: 64,
+    height: 1.56,
+    calBMI: function BMI() {
+        return this.mass / (this.height * this.height);
     }
-
-    return percentage * bill;
-
-
 }
 
-var bill = [124, 48, 268];
-var tips = [tipsCalculator(bill[0]), tipsCalculator(bill[1]), tipsCalculator(bill[2])];
-var finalResult = [bill[0] + tips[0],
-bill[1] + tips[1],
-bill[2] + tips[2]
-];
-console.log(finalResult);
+var mark = {
+
+    firstName: 'Mark',
+    lastName: 'Lane',
+    mass: 68,
+    height: 1.56,
+    calBMI: function BMI() {
+        return this.mass / (this.height * this.height);
+    }
+}
 
 
+var johnBMI = jhon.calBMI();
+var markBMI = mark.calBMI();
+
+// console.log(jhon.firstName +" " +jhon.lastName + " "+ johnBMI );
+// console.log(mark.firstName +" "+mark.lastName +" "+markBMI);
+
+var finalResult = function (jhonBMI, markBMI) {
+
+    switch (true) {
+        case jhonBMI > markBMI:
+            return console.log(jhon.firstName + ' ' + jhon.lastName + ' ' + jhonBMI);
+            break;
+        case markBMI > jhonBMI:
+            return console.log(mark.firstName + ' ' + mark.lastName + ' ' + markBMI);
+            break;
+        default:
+            console.log('Both has same BMI');
+    }
+}
+
+finalResult(johnBMI, markBMI);
 
 
