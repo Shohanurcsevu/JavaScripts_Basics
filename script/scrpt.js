@@ -444,9 +444,58 @@
 //     console.log(i);
 // }
 
-var jhon=['jhon','Smith', 1994, 'designer',false];
+// var jhon=['jhon','Smith', 1994, 'designer',false];
 
-for(var i =0;i <jhon.length ;i++ )
-{
-    console.log(jhon[i]);
-}
+// for(var i =0;i <jhon.length ;i++ )
+// {
+//     console.log(jhon[i]);
+// }
+// var i=0;
+// while(i < jhon.length)
+// {
+//     console.log(jhon[i]);
+//     i++;
+// }
+
+//continue and break Statement
+// for(var i =0;i <jhon.length ;i++ )
+// {
+//      if(typeof jhon[i] !== 'string') continue ;
+
+//     console.log(jhon[i]);
+// }
+// //loping backword
+
+// for(var i = jhon.length -1  ; i >=0 ;i--)
+// {
+//     console.log(jhon[i]);
+// }
+
+var jhon = {
+    Name : 'Jhon Smith',
+    bill: [124, 48, 268, 180, 42],
+    tips: [],
+    totalamoutpaid: [],
+    calCulateBill: function calBill() {
+        var percentage;
+        for (var i = 0; i < this.bill.length; i++) {
+            if (this.bill[i] < 50) {
+                percentage = .2;
+
+            } else if (this.bill[i] >= 50 && this.bill[i] < 200) {
+                percentage = .15;
+            }
+            else {
+                percentage = .1;
+            }
+
+            this.tips[i] = percentage;
+            this.totalamoutpaid[i] = this.bill[i] + this.bill[i] * this.tips[i];
+            console.log(this.totalamoutpaid[i]);
+        }
+    },
+};
+
+
+jhon.calCulateBill();
+
