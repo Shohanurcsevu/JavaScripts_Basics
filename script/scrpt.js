@@ -495,7 +495,55 @@ var jhon = {
         }
     },
 };
+var mark = {
+    Name : 'Mark Milan',
+    bill: [77, 375, 110, 45],
+    tips: [],
+    totalamoutpaid: [],
+    calCulateBill: function calBill() {
+        var percentage;
+        for (var i = 0; i < this.bill.length; i++) {
+            if (this.bill[i] < 100) {
+                percentage = .2;
+
+            } else if (this.bill[i] >= 50 && this.bill[i] < 300) {
+                percentage = .1;
+            }
+            else {
+                percentage = .25;
+            }
+
+            this.tips[i] = percentage;
+            this.totalamoutpaid[i] = this.bill[i] + this.bill[i] * this.tips[i];
+            console.log(this.totalamoutpaid[i]);
+        }
+    },
+};
 
 
-jhon.calCulateBill();
+function averagebill(bill)
+{
+     var sum=0;
+    for(var i =0 ; i<bill.length; i++)
+    {
+        var sum= sum+bill[i];
+    }
+    return sum / bill.length;
+
+}
+
+console.log(jhon.Name) + jhon.calCulateBill();
+console.log(mark.Name) + mark.calCulateBill();
+
+var jhonAverageTips = averagebill(jhon.totalamoutpaid);
+var markAvergeTips  = averagebill(mark.totalamoutpaid);
+console.log("Jhon's Average Paid tips:  " + jhonAverageTips);
+console.log("Mark's Average Paid tips:  " + markAvergeTips);
+ 
+ jhonAverageTips < markAvergeTips ? 
+ console.log('Marks family gives more tips'):
+ console.log("Jhon's family gives more tips");
+
+
+
 
