@@ -544,6 +544,8 @@ console.log("Mark's Average Paid tips:  " + markAvergeTips);
  console.log('Marks family gives more tips'):
  console.log("Jhon's family gives more tips");
 
+ console.log('finally');
+
 
 
 
