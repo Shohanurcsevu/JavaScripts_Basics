@@ -17,25 +17,25 @@
 //         console.log(a + " " +b+" " +c);
 //     }
 // }
-var a = 'Hello';
-first();
+// var a = 'Hello';
+// first();
 
-function first() {
-    var b = 'My Name ';
-    second();
+// function first() {
+//     var b = 'My Name ';
+//     second();
 
 
-    function second() {
-        var c = 'is';
-        third();
-    }
-}
+//     function second() {
+//         var c = 'is';
+//         third();
+//     }
+// }
 
-function third() {
+// function third() {
     
-    var d = 'Shohan'
-    console.log(a + " " + " " + d);
-}
+//     var d = 'Shohan'
+//     console.log(a + " " + " " + d);
+// }
 
 //here variable a is in Global Scope this why third
 //function can get the access 
