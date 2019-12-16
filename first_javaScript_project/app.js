@@ -44,19 +44,20 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
         var diceDOM = document.querySelector('.dice');
         diceDOM.style.display = 'block';
         diceDOM.src = 'dice-' + dice + '.png';
-
-
-
+        var r1 = dice;
+        var r2 = 0;
+        console.log(r1);
         //3.Update the the result if the rolled number was not 1
         if (dice !== 1) {
+            // r1=dice;
             roundScore += dice;
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
-
-
-
         } else {
-            //hit the next player
+           //Done
             nextPlayer();
+            /*
+            Nothing is working now what the hell
+            */
 
 
             //document.querySelector('.player-0-panel').classList.remove('active');
@@ -76,31 +77,30 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
 //document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>'
 
 document.querySelector('.btn-hold').addEventListener('click', function () {
-    if(gamPlaying)
-    {
-          //add current score the global score
-    scores[activePlayer] += roundScore;
-    console.log(scores[activePlayer]);
-    //update the ui
-    //document.querySelector('.score-'+activePlayer).textContent = scores[activePlayer];
-    document.getElementById('score-' + activePlayer).textContent = scores[activePlayer];
+    if (gamPlaying) {
+        //add current score the global score
+        scores[activePlayer] += roundScore;
+        console.log(scores[activePlayer]);
+        //update the ui
+        //document.querySelector('.score-'+activePlayer).textContent = scores[activePlayer];
+        document.getElementById('score-' + activePlayer).textContent = scores[activePlayer];
 
-    if (scores[activePlayer] >= 10) {
-       
-        document.getElementById('name-' + activePlayer).textContent = 'Winner';
-        document.querySelector('.dice').style.display = 'none';
-        document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
-        document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
-        gamPlaying=false;
+        if (scores[activePlayer] >= 100) {
 
-    } else {
-        nextPlayer();
+            document.getElementById('name-' + activePlayer).textContent = 'Winner';
+            document.querySelector('.dice').style.display = 'none';
+            document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+            document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+            gamPlaying = false;
+
+        } else {
+            nextPlayer();
+
+        }
+
 
     }
 
-
-    }
-  
 
     //if player won the game
 });
