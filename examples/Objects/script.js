@@ -72,26 +72,45 @@
 // console.log(z);
 
 /*Function Returns Function */
-function interViewQuestion(job) {
-  switch (job) {
-    case "teacher":
-      return function(name) {
-        console.log("Hello" +" "+ name + " , what subject do you teach about?");
-      };
-      break;
-    case "designer":
-      return function(name) {
-        console.log("Hello" +" "+ name + " , what do you know about UX Design?");
-      };
-      break;
-    default:
-      return function(name) {
-        console.log("Hello" +" " +name + " , what do you do for your live?");
-      };
-      
-  }
+// function interViewQuestion(job) {
+//   switch (job) {
+//     case "teacher":
+//       return function(name) {
+//         console.log("Hello" +" "+ name + " , what subject do you teach about?");
+//       };
+//       break;
+//     case "designer":
+//       return function(name) {
+//         console.log("Hello" +" "+ name + " , what do you know about UX Design?");
+//       };
+//       break;
+//     default:
+//       return function(name) {
+//         console.log("Hello" +" " +name + " , what do you do for your live?");
+//       };
+
+//   }
+// }
+
+// var teacherQuestion = interViewQuestion('teacher');
+// teacherQuestion('Atique');
+// teacherQuestion('Dave');
+
+// interViewQuestion('designer')('Jake');
+
+//clousers_in_JavaScript
+
+function retirementAgeByCountry(retiremntAge) {
+  return function(yearOfBirth) {
+    var a = ' years left until retirement '
+    var presntAge = 2019 - yearOfBirth;
+    console.log(retiremntAge - presntAge + a);
+    
+  };
 }
 
-var teacherQuestion = interViewQuestion('teacher');
-teacherQuestion('Atique');
-teacherQuestion('Dave');
+var retirementtUS = retirementAgeByCountry(61);
+var retirementtBD = retirementAgeByCountry(65);
+
+retirementtUS(1994);
+retirementtBD(1994);
