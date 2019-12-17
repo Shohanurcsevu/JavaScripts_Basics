@@ -100,17 +100,62 @@
 
 //clousers_in_JavaScript
 
-function retirementAgeByCountry(retiremntAge) {
-  return function(yearOfBirth) {
-    var a = ' years left until retirement '
-    var presntAge = 2019 - yearOfBirth;
-    console.log(retiremntAge - presntAge + a);
-    
-  };
-}
+// function retirementAgeByCountry(retiremntAge) {
+//   return function(yearOfBirth) {
+//     var a = " years left until retirement ";
+//     var presntAge = 2019 - yearOfBirth;
+//     console.log(retiremntAge - presntAge + a);
+//   };
+// }
 
-var retirementtUS = retirementAgeByCountry(61);
-var retirementtBD = retirementAgeByCountry(65);
+// var retirementtUS = retirementAgeByCountry(61);
+// var retirementtBD = retirementAgeByCountry(65);
 
-retirementtUS(1994);
-retirementtBD(1994);
+// retirementtUS(1994);
+// retirementtBD(1994);
+//Bind Call Apply
+
+var jhon = {
+  name: "Jhon",
+  age: 24,
+  job: "teacher",
+  presentation: function(style, dateoftime) {
+    if (style === "formal") {
+      console.log(
+        
+          dateoftime +
+          " Ladies & GentelMan ! I\'m " +
+          this.name +
+          " I'm a " +
+          this.job +
+          " and I\'m " +
+          this.age +
+          " year's old"
+      );
+    } else if (style === "friendly") {
+      console.log(
+        "Hey ! what's up  I'm  " +
+          this.name +
+          " I'm " +
+          this.age +
+          " year's old" +
+          " and I'm " +
+          this.job +
+          " have a nice "+dateoftime
+      );
+    }
+  }
+};
+var emily= {
+  name : 'Emily',
+  age: 27,
+  job: 'designer'
+};
+jhon.presentation('formal','Good Morning');
+
+jhon.presentation.call(emily,'friendly','Evening');
+
+var jhonFriendly = jhon.presentation.bind(
+  jhon, 'friendly'
+);
+jhonFriendly('Good night');
