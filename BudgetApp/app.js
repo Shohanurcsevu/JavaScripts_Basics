@@ -41,6 +41,8 @@ var mainController = (function(budgetCtrl) {
   var controlAddItem = function() {
     //TODO 1. Get the filed Data
     var input = UIController.getInput();
+  
+
 
 
     //TODO 2. Add the item to budget controller
