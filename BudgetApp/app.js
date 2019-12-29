@@ -11,6 +11,13 @@ var budgetController = (function() {
   };
 })();
 
+var UIController = (function(){
+
+  //TODO Code here Some
+
+
+})();
+
 var mainController = (function(budgetCtrl) {
   var a = 3;
 
