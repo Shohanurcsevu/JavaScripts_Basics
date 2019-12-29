@@ -28,4 +28,4 @@ var mainController = (function(budgetCtrl) {
       console.log(x);
     }
   };
-})(budgetController);
+})(budgetController,UIController);
