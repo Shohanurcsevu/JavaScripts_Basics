@@ -1,31 +1,44 @@
-var budgetController = (function() {
-  var x = 10;
-  var add = function(a) {
-    return x + a;
+//Budget Controller
+var budgetController = (function() {})();
+
+var UIController = (function() {
+  var DOMstrings = {
+    inputType: ".add__type",
+    description: ".add__description",
+    value: ".add__value"
   };
 
   return {
-    publicTest: function(b) {
-      return add(b);
+    getInput: function() {
+      return {
+        type: document.querySelector(DOMstrings.inputType).value,
+        description: document.querySelector(DOMstrings.description).value,
+        value: document.querySelector(DOMstrings.value).value
+      };
     }
   };
-})();
-
-var UIController = (function(){
-
-  //TODO Code here Some
-
-
 })();
 
 var mainController = (function(budgetCtrl) {
-  var a = 3;
+  var controlAddItem = function() {
+    //TODO 1. Get the filed Data
+    var input = UIController.getInput();
+    console.log(input);
 
-  var x = budgetCtrl.publicTest(a);
+    //TODO 2. Add the item to budget controller
 
-  return {
-    test: function() {
-      console.log(x);
-    }
+    //TODO 3. Add the item to the UI
+
+    //TODO 4. Calculate the budget
+
+    //TODO 5. Display the budget on the UI
   };
-})(budgetController,UIController);
+
+  document.querySelector(".add__btn").addEventListener("click", controlAddItem);
+
+  document.addEventListener("keypress", function(event) {
+    if (event.keyCode === 13 || event.which === 13) {
+      controlAddItem();
+    }
+  });
+})(budgetController, UIController);
