@@ -6,7 +6,7 @@ var UIController = (function() {
     inputType: ".add__type",
     description: ".add__description",
     value: ".add__value",
-    btnAdd: ".add__btn",
+    btnAdd: ".add__btn"
   };
 
   return {
@@ -18,23 +18,30 @@ var UIController = (function() {
       };
     },
 
-    getDOMstrings: function(){
-
+    getDOMstrings: function() {
       return DOMstrings;
     }
   };
 })();
 
 var mainController = (function(budgetCtrl) {
+  var setupEventListeners = function() {
+    var DOM = UIController.getDOMstrings();
+    document
+      .querySelector(DOM.btnAdd)
+      .addEventListener("click", controlAddItem);
 
-  var DOM =UIController.getDOMstrings();
-
-
+    document.addEventListener("keypress", function(event) {
+      if (event.keyCode === 13 || event.which === 13) {
+        controlAddItem();
+      }
+    });
+  };
 
   var controlAddItem = function() {
     //TODO 1. Get the filed Data
     var input = UIController.getInput();
-    console.log(input);
+
 
     //TODO 2. Add the item to budget controller
 
@@ -45,11 +52,12 @@ var mainController = (function(budgetCtrl) {
     //TODO 5. Display the budget on the UI
   };
 
-  document.querySelector(DOM.btnAdd).addEventListener("click", controlAddItem);
-
-  document.addEventListener("keypress", function(event) {
-    if (event.keyCode === 13 || event.which === 13) {
-      controlAddItem();
+  return {
+    init: function() {
+      console.log("ApplicationStarted");
+      setupEventListeners();
     }
-  });
+  };
 })(budgetController, UIController);
+
+mainController.init();
